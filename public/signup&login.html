@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+  </head>
+  <body class="font-poppins" style="background-color: #fafcfc">
+    <nav class="parent-navbar mt-7 sticky top-0 z-50">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button
+              type="button"
+              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+              <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex flex-1 items-center justify-center sm:items-stretch">
+            <div class="flex flex-shrink-0 items-center">
+              <img class="w-[69px] h-[55px]" src="/UntukDiaYangMeminta/UntukDiaYangMeminta/image/Careita.svg" alt="Your Company" />
+              <a href="#" class="responsive-navbrand text-xl text-[#195964] font-bold ml-4">Careita</a>
+            </div>
+            <div class="hidden sm:block sm:ml-6 flex-1 pl-20">
+              <div class="flex justify-end space-x-4">
+                <a href="komunitas.html" class="px-4 py-2 rounded-md text-base text-[#195964] font-medium">Komunitas</a>
+                <a href="aboutUs.html" class="px-4 py-2 rounded-md text-base text-[#195964] font-medium">Tentang Kami</a>
+                <a href="Artikel.html" class="px-4 py-2 rounded-md text-base text-[#195964] font-medium">Artikel</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sm:hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+          <a href="komunitas.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Komunitas</a>
+          <a href="aboutUs.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Tentang Kami</a>
+          <a href="Artikel.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Artikel</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="-mt-20 container mx-auto h-full w-full overflow-hidden reveal">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 h-full">
+        <div class="col-span-6 flex flex-col justify-center p-6 md:p-0">
+          <p class="text-[52px] font-bold text-[#195964] mb-10 mt-36 w-[800px]">Selamat Datang di Careita</p>
+          <div class="w-full mt-2">
+            <p class="text-lg text-[#195964] font-medium mb-10">
+              Careita adalah platform kesehatan mental yang dirancang untuk membantu Anda menemukan keseimbangan dan kebahagiaan dalam hidup. Kami menyediakan berbagai layanan seperti konsultasi, artikel, dan komunitas yang dapat mendukung
+              perjalanan kesehatan mental Anda. Mulailah perjalanan Anda bersama kami hari ini dan temukan cara untuk meraih kesejahteraan.
+            </p>
+          </div>
+          <div class="flex items-end justify-end mt-auto mb-auto overflow-hidden">
+            <img src="/UntukDiaYangMeminta/UntukDiaYangMeminta/image/HAHAHA.png.png" alt="Your Image" class="h-auto w-auto" />
+          </div>
+        </div>
+        <div class="col-span-6 p-6 md:p-0">
+          <div
+            id="auth-container"
+            class="mt-10 md:mt-44 md:ml-40 rounded-sm border textPrimary flex flex-col overflow-auto min-w-0 sm:relative sm:top-auto sm:bottom-0 sm:right-0 sm:ml-0 mx-auto borderColor"
+            style="width: 410px; height: 470px"
+          >
+            <div class="w-full flex justify-between items-center">
+              <a href="#" id="login-link" onclick="showLoginForm()" class="text-[#195964] text-base font-bold relative pb-1 ml-28 mt-10">
+                Masuk
+                <div id="login-underline" class="hidden-underline" style="position: absolute; bottom: 5px; left: 10px; width: 60%; height: 2px; background-color: #319795"></div>
+              </a>
+              <a href="#" id="register-link" onclick="showRegisterForm()" class="text-center text-[#195964] text-base font-medium relative mr-28 mt-10"
+                >Daftar
+                <div id="register-underline" class="hidden-underline" style="position: absolute; bottom: 1px; left: 10px; width: 0%; height: 2px; background-color: #319795"></div>
+              </a>
+            </div>
+            <div id="login-form" class="form-content">
+              <div class="text-xs text-[#195964] font-medium mt-6 ml-12">
+                Email
+                <div style="width: 340px">
+                  <div class="rounded-xl border mt-1 -ml-2 textPrimary flex items-center justify-start pl-3 borderColor" style="height: 45px">
+                    <input type="email" class="text-slate-300 text-sm font-normal bg-transparent w-full borderColor" placeholder="example@gmail.com" />
+                  </div>
+                </div>
+              </div>
+              <div class="text-xs text-[#195964] font-medium mt-3 ml-12">
+                Password
+                <div style="width: 340px">
+                  <div class="rounded-xl border mt-1 -ml-2 textPrimary flex items-center justify-start pl-3 borderColor" style="height: 45px">
+                    <input type="password" class="text-slate-300 text-sm font-normal bg-transparent w-full" placeholder="example123" />
+                  </div>
+                </div>
+              </div>
+              <div class="mt-2"><a href="#" class="text-xs opacity-50 text-[#76A2A8] font-semibold ml-12"> Lupa kata sandi? </a></div>
+              <div class="mt-5 ml-10" style="width: 340px">
+                <a href="HPUdahLogin.html" class="rounded-xl border textPrimary bg-gray-600 flex items-center justify-center w-full" style="height: 45px; background-color: #195964">
+                  <div class="text-[#FAFCFC] text-[15px] font-semibold">Masuk</div>
+                </a>
+              </div>
+              <div class="flex items-center justify-center mt-4 ml-4">
+                <div class="w-20 h-0 border border-[#195964] mr-3"></div>
+                <div class="text-center text-[#195964] text-xs font-semibold -mt-1">atau</div>
+                <div class="w-20 h-0 border border-[#195964] ml-3"></div>
+              </div>
+              <div class="flex items-center justify-center ml-4 mt-3">
+                <a href="https://www.facebook.com">
+                  <img class="w-12 h-11 mr-8" src="/UntukDiaYangMeminta/UntukDiaYangMeminta/image/facebook.png" />
+                </a>
+                <a href="https://www.google.com">
+                  <img class="w-12 h-12 ml-14" src="/UntukDiaYangMeminta/UntukDiaYangMeminta/image/google.png" />
+                </a>
+              </div>
+            </div>
+            <div id="register-form" class="form-content hidden">
+              <div class="text-xs text-[#195964] font-medium mt-3 ml-12">
+                Email
+                <div style="width: 340px">
+                  <div class="rounded-xl border textPrimary mt-1 -ml-2 flex items-center justify-start pl-3 borderColor" style="height: 45px">
+                    <input type="email" class="text-slate-300 text-sm font-normal bg-transparent w-full" placeholder="example@gmail.com" />
+                  </div>
+                </div>
+              </div>
+              <div class="text-xs text-[#195964] font-medium mt-3 ml-12">
+                Password
+                <div style="width: 340px">
+                  <div class="rounded-xl border textPrimary mt-1 -ml-2 flex items-center justify-start pl-3 borderColor" style="height: 45px">
+                    <input type="password" class="text-slate-300 text-sm font-normal bg-transparent w-full" placeholder="example123" />
+                  </div>
+                </div>
+              </div>
+              <div class="text-xs text-[#195964] font-medium mt-3 ml-12">
+                Confirm Password
+                <div style="width: 340px">
+                  <div class="rounded-xl border textPrimary mt-1 -ml-2 flex items-center justify-start pl-3 borderColor" style="height: 45px">
+                    <input type="password" class="text-slate-300 text-sm font-normal bg-transparent w-full" placeholder="example123" />
+                  </div>
+                </div>
+              </div>
+              <div class="text-xs text-[#195964] font-medium mt-3 ml-12">
+                Full Name
+                <div style="width: 340px">
+                  <div class="rounded-xl border textPrimary mt-1 -ml-2 flex items-center justify-start pl-3 borderColor" style="height: 45px">
+                    <input type="text" class="text-slate-300 text-sm font-normal bg-transparent w-full" placeholder="John Doe" />
+                  </div>
+                </div>
+              </div>
+              <div class="mt-3 ml-10" style="width: 340px">
+                <button class="rounded-xl border bg-gray-600 flex items-center justify-center w-full" style="height: 45px; background-color: #195964">
+                  <a href="signup&login.html" class="text-white text-sm font-normal">Daftar</a>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function handleResize() {
+        if (window.innerWidth < 768) {
+          document.body.style.overflow = 'auto';
+        } else {
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      function showLoginForm() {
+        document.getElementById('login-form').classList.remove('hidden');
+        document.getElementById('register-form').classList.add('hidden');
+        document.getElementById('login-underline').style.width = '60%';
+        document.getElementById('login-link').style.fontWeight = 'bold';
+        document.getElementById('register-link').style.fontWeight = 'normal';
+        document.getElementById('register-underline').style.width = '0%'; // Hide register underline
+      }
+
+      function showRegisterForm() {
+        document.getElementById('login-form').classList.add('hidden');
+        document.getElementById('register-form').classList.remove('hidden');
+        document.getElementById('login-underline').style.width = '0%'; // Hide login underline
+        document.getElementById('login-link').style.fontWeight = 'normal';
+        document.getElementById('register-link').style.fontWeight = 'bold';
+        document.getElementById('register-underline').style.width = '60%';
+      }
+
+      window.addEventListener('resize', handleResize);
+
+      // Call the function on initial load
+      window.addEventListener('DOMContentLoaded', handleResize);
+    </script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      ScrollReveal().reveal('.reveal', {
+        duration: 900,
+        easing: 'ease-in-out',
+        reset: true,
+      });
+    </script>
+  </body>
+</html>

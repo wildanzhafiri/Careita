@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat Dokter</title>
+    <link href="output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="main.js" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <style>
+      #popup2 {
+        display: none;
+      }
+
+      #popup2.show {
+        display: flex;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-100 font-poppins text-cyan-900">
+    <nav class="bg-[#C4D7DA] h-16 w-full sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <!-- Left Side - Logo -->
+          <div class="flex items-center space-x-4 flex-1">
+            <svg width="56" height="42" viewBox="0 0 56 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M55.9999 21C55.9999 15.4305 53.6398 10.089 49.4389 6.15075C45.238 2.2125 39.5404 7.30358e-07 33.5994 0C27.6585 -7.30356e-07 21.9609 2.2125 17.7599 6.15075C13.559 10.089 11.199 15.4305 11.199 21H18.1992C20.5189 21 22.3279 19.1776 23.1776 17.1541C23.7354 15.8255 24.5819 14.6046 25.6796 13.5753C27.7801 11.6062 30.6289 10.5 33.5994 10.5C36.5699 10.5 39.4188 11.6062 41.5192 13.5753C43.6197 15.5445 44.7996 18.2152 44.7996 21H55.9999Z"
+                fill="url(#paint0_linear_1012_3153)"
+              />
+              <path
+                d="M43.0958 29.0363C44.2215 26.4884 44.801 23.7577 44.801 21H56C56 32.5979 45.9709 41.9999 33.5995 41.9999C31.6621 41.9999 29.782 41.7693 27.9891 41.3359C29.0036 41.0908 30.0006 40.7788 30.9727 40.4014C33.6905 39.346 36.1599 37.7992 38.24 35.8492C40.3201 33.8991 41.9702 31.5841 43.0958 29.0363Z"
+                fill="#FBCF8E"
+              />
+              <path
+                d="M0 21C-4.20831e-07 23.7578 0.579404 26.4886 1.70513 29.0364C2.83086 31.5843 4.48086 33.8993 6.56094 35.8493C8.641 37.7992 11.1104 39.3462 13.8282 40.4015C16.5459 41.4569 19.4587 42 22.4005 42C25.3421 42 28.2549 41.4569 30.9727 40.4015C33.6905 39.3462 36.1599 37.7992 38.2399 35.8493C40.32 33.8993 41.97 31.5843 43.0957 29.0364C44.2215 26.4886 44.8009 23.7578 44.8009 21H37.8007C35.481 21 33.672 22.8224 32.8223 24.8458C32.7982 24.9035 32.7734 24.9609 32.7481 25.0183C32.1852 26.2921 31.3603 27.4497 30.3201 28.4247C29.2802 29.3996 28.0454 30.1731 26.6866 30.7008C25.3278 31.2285 23.8713 31.5001 22.4005 31.5001C20.9296 31.5001 19.4732 31.2285 18.1144 30.7008C16.7554 30.1731 15.5208 29.3996 14.4807 28.4247C13.4406 27.4497 12.6157 26.2921 12.0528 25.0183C11.4899 23.7443 11.2002 22.3789 11.2002 21H0Z"
+                fill="url(#paint1_linear_1012_3153)"
+              />
+              <path d="M0.00231934 21C0.00231934 9.40198 10.0313 0 22.4027 0C24.3397 0 26.2192 0.230467 28.0119 0.663765C24.1652 1.59276 20.6167 3.47279 17.76 6.15077C13.5592 10.089 11.1991 15.4305 11.1991 21H0.00231934Z" fill="#93E4DB" />
+              <defs>
+                <linearGradient id="paint0_linear_1012_3153" x1="55.9999" y1="10.5" x2="11.199" y2="10.5" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#93E4DB" />
+                  <stop offset="1" stop-color="#2E6C76" />
+                </linearGradient>
+                <linearGradient id="paint1_linear_1012_3153" x1="1.46873e-06" y1="31.5001" x2="44.8009" y2="31.5001" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FBDC8E" />
+                  <stop offset="1" stop-color="#FB958E" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+            <h1 class="text-xl font-bold text-[#195964]">Careita</h1>
+          </div>
+          <!-- Navigation Links -->
+          <div class="hidden md:flex md:space-x-8 md:items-center justify-center">
+            <a href="#" class="text-[#195964] hover:text-gray-900 px-3 py-2 rounded-md font-medium text-lg transition duration-300 ease-in-out hover:bg-green-50">Beranda</a>
+            <div class="relative">
+              <button onclick="toggleDropdown()" id="dropdownButton" class="flex items-center text-[#195964] px-3 py-2 rounded-md font-bold text-lg transition duration-300 ease-in-out hover:bg-green-50">
+                Fitur
+                <svg id="arrowIcon" class="ml-1" width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M5 0L10 8L0 8L5 0Z" fill="#195964" />
+                </svg>
+              </button>
+              <div id="dropdownMenu" class="absolute left-0 top-full w-48 shadow-lg py-1 z-10 bg-green-50 hidden">
+                <a href="/public/MentalHealthTest.html" class="block px-4 py-2 text-sm text-[#195964] hover:bg-gray-100">Mental Health Test</a>
+                <a href="konsultasi.html" class="block px-4 py-2 text-sm text-[#195964] hover:bg-gray-100">Konsultasi</a>
+                <a href="moodrecap.html" class="block px-4 py-2 text-sm text-[#195964] hover:bg-gray-100">Mood Tracker</a>
+                <a href="/public/komunitas.html" class="block px-4 py-2 text-sm text-[#195964] hover:bg-gray-100">Komunitas</a>
+              </div>
+            </div>
+            <a href="/public/Artikel.html" class="text-[#195964] hover:text-gray-900 px-3 py-2 rounded-md font-medium text-lg transition duration-300 ease-in-out hover:bg-green-50">Artikel</a>
+            <a href="/public/aboutUs.html" class="text-[#195964] hover:text-gray-900 px-3 py-2 rounded-md font-medium text-lg transition duration-300 ease-in-out hover:bg-green-50 whitespace-nowrap">About Us</a>
+          </div>
+          <!-- Right Side - Buttons -->
+          <div class="flex items-center justify-end flex-1">
+            <a
+              href="/public/profil.html"
+              class="text-[#195964] w-32 h-10 text-center border border-[#195964] hover:text-gray-900 px-3 py-2 rounded-l-md font-medium text-lg transition duration-300 ease-in-out hover:bg-green-50 flex items-center justify-center"
+              >Lihat Profil</a
+            >
+            <a
+              href="/public/homepage.html"
+              class="text-[#195964] w-32 h-10 text-center border border-[#195964] px-3 py-2 rounded-r-md font-medium text-lg transition duration-300 ease-in-out hover:bg-green-50 flex items-center justify-center"
+              >Keluar</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="flex flex-col md:flex-row max-w-[1026px] max-h-fit mx-auto p-4 gap-x-[32px] my-[46px] reveal">
+      <!-- Left Section -->
+      <div class="bg-zinc-300 rounded-tl-3xl rounded-bl-3xl p-4 md:w-1/3 mb-[43px] md:mb-0 flex flex-col">
+        <h1 class="ml-[34px] mt-[46px] w-60 h-9 text-2xl font-bold">Dokter</h1>
+        <img
+          class="w-24 h-24 rounded-full object-cover mb-4 ml-[34px]"
+          src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+          alt="Doctor's Photo"
+        />
+        <div class="text-left ml-[34px]">
+          <h2 class="text-lg font-semibold">Oliver Hans S.Psi</h2>
+          <p class="text-gray-600">Spesialis xxxx</p>
+          <p class="text-gray-600">STR: 123456789101110</p>
+        </div>
+        <div class="flex items-center my-4 ml-[34px]">
+          <div class="flex items-center mr-6">
+            <img src="img/hugeicons_new-job.svg" alt="Camera" class="h-6 w-6 mr-2 bg-white bg-origin-border border-x-[5px] border-y-[5px] border-white rounded" />
+            <span class="w-14 h-4 text-center text-cyan-900 text-xs font-normal font-poppins">xx tahun</span>
+          </div>
+          <div class="flex items-center">
+            <img src="img/ant-design_like-outlined.svg" alt="Calendar" class="h-6 w-6 mr-2 bg-white bg-origin-border border-x-[5px] border-y-[5px] border-white rounded" />
+            <span class="w-6 h-4 text-center text-cyan-900 text-xs font-normal font-poppins">xx%</span>
+          </div>
+        </div>
+        <div class="ml-[34px] mt-[12px]">
+          <h3 class="text-md font-semibold">Alumnus</h3>
+          <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
+        </div>
+        <div class="mt-[22px] ml-[34px]">
+          <h3 class="text-md font-semibold">Praktik di</h3>
+          <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        </div>
+      </div>
+
+      <!-- Right Section -->
+      <div class="bg-zinc-300 rounded-tr-3xl rounded-br-3xl p-4 flex-5">
+        <div class="mb-[43px] mr-[55px]">
+          <div class="bg-emerald-300 bg-opacity-80 rounded-tl-3xl rounded-tr-3xl rounded-bl-3xl py-[17px] px-[25px] mb-[26px] mt-[46px] w-96 h-20 ml-[246px]">
+            <div class="w-80 text-right text-cyan-900 text-xs font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend diam sed eros sollicitudin maximus. Mauris auctor, urna fringilla dignissim lobortis,</div>
+          </div>
+          <div class="text-white w-96 h-20 bg-cyan-900 bg-opacity-80 rounded-tl-3xl rounded-tr-3xl rounded-br-3xl py-[17px] px-[25px] ml-[51px]">
+            <div class="w-80 text-gray-50 text-xs font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend diam sed eros sollicitudin maximus. Mauris auctor, urna fringilla dignissim lobortis,</div>
+          </div>
+          <div class="bg-emerald-300 bg-opacity-80 rounded-tl-3xl rounded-tr-3xl rounded-bl-3xl py-[17px] px-[25px] mb-[26px] mt-[26px] w-96 h-20 ml-[246px]">
+            <div class="w-80 text-right text-cyan-900 text-xs font-normal">Integer gravida fermentum nunc. Duis facilisis sed turpis eu varius. Nulla tempor orci quis arcu eleifend porttitor.</div>
+          </div>
+          <div class="text-white w-96 h-28 bg-cyan-900 bg-opacity-80 rounded-tl-3xl rounded-tr-3xl rounded-br-3xl py-[17px] px-[25px] ml-[51px]">
+            <div class="w-80 text-gray-50 text-xs font-normal">
+              Nulla scelerisque nec metus sed dapibus. Cras posuere vel eros ac rhoncus. Pellentesque auctor mollis velit, in fringilla lacus feugiat a. Donec finibus tincidunt erat, ac pellentesque turpis malesuada non.
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center mb-[36px]">
+          <input type="text" class="flex-1 p-2 rounded-lg bg-gray-50 border border-gray-300" placeholder="memulai pesan..." />
+          <button class="ml-2 p-2 bg-black text-white rounded-lg consult-btn">Kirim</button>
+        </div>
+      </div>
+
+      <div id="popup2" class="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 bg-opacity-50">
+        <div class="bg-slate-300 rounded-3xl px-[72px] py-[50px] w-[497px] h-[454px] relative flex items-center justify-center">
+          <button id="closePopup2" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <div class="flex flex-col items-center text-center">
+            <h2 class="text-red-800 text-2xl font-bold">Diagnosa sedang diproses oleh konsultan</h2>
+            <p id="timeCount" class="text-base font-semibold">Diagnosa anda akan muncul dalam waktu 5</p>
+            <a href="sudah_bayar.html">
+              <button id="backToHome" class="bg-cyan-900 text-gray-50 px-4 py-2 rounded-xl mt-1 w-fit text-xs font-bold font-poppins">Kembali ke beranda</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const consultButtons = document.querySelectorAll('.consult-btn');
+      const popup2 = document.getElementById('popup2');
+      const closePopupButton2 = document.getElementById('closePopup2');
+      const timeCount = document.getElementById('timeCount');
+
+      consultButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          popup2.classList.add('show');
+
+          // Countdown timer
+          let timeLeft = 5;
+          timeCount.textContent = `Diagnosa akan muncul dalam waktu ${timeLeft}`;
+
+          const countdown = setInterval(() => {
+            timeLeft -= 1;
+            timeCount.textContent = `Diagnosa akan muncul dalam waktu ${timeLeft}`;
+
+            if (timeLeft <= 0) {
+              clearInterval(countdown);
+              window.location.href = 'diagnosa.html';
+            }
+          }, 1000);
+        });
+      });
+
+      closePopupButton2.addEventListener('click', () => {
+        popup2.classList.remove('show');
+      });
+
+      popup2.addEventListener('click', (event) => {
+        if (event.target === popup2) {
+          popup2.classList.remove('show');
+        }
+      });
+    </script>
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      ScrollReveal().reveal('.reveal', {
+        duration: 900,
+        easing: 'ease-in-out',
+        reset: true,
+      });
+    </script>
+  </body>
+</html>
